@@ -1,0 +1,9 @@
+{
+    "compilerOptions": {
+        "module": "CommonJS",
+        "target": "ES2019", // Node.js 12
+        "strict": true,
+        "pretty": true
+    },
+    "esModuleInterop": true
+}
