@@ -116,7 +116,7 @@ export default class LinkedList<T extends {}> {
             return value
         }
 
-        let currentNode = this._head
+        let currentNode: typeof this._head | null = this._head
         let previousNode = currentNode
 
         while (currentNode) {
@@ -126,7 +126,7 @@ export default class LinkedList<T extends {}> {
             }
 
             previousNode = currentNode
-            currentNode = currentNode.next as Node<T>
+            currentNode = currentNode.next
         }
 
         return null
@@ -139,8 +139,11 @@ export default class LinkedList<T extends {}> {
 
     // O(n)
     toString() {
-        return this.toArray()
+        return (
+            this
+            .toArray()
             .map((node) => node.toString())
             .join(' -> ')
+        )
     }
 }
